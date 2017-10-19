@@ -1,6 +1,6 @@
 public static function combSort(array $array){
 	$swapped = false;
-	$j = 0;
+	$j = 0; 
 	$length = count($array);
 	$gap = $length;
 	
