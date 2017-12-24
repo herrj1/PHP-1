@@ -14,7 +14,7 @@
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-        <!-- codes starts here -->
+        <!-- codes starts here  -->
         <h2>Contact me</h2>
         <form name="sendmail" action="" method="post">
             <label>Name</label>
