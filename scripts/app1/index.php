@@ -26,7 +26,7 @@
             <label>Email</label>
             <textarea class="pretty" name="message" type="text"></textarea>
         </form>
-        <!-- codes ends here -->
+        <!-- codes ends here  -->
         <?php 
           if(isset($_POST['submit']))
           {
