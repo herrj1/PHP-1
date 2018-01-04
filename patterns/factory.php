@@ -5,9 +5,8 @@ interface IUser{
 
 class User implements IUser{
 	public function __construct($id){}
-	
 	public function getName(){
-		return "John";
+		return "Mark";
 	}
 }
 
