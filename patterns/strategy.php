@@ -50,7 +50,7 @@
 	}
 	
 	$ul = new UserList(array("Josh", "Olaf", "Laura", "Norman"));
-	$f1 = $ul->find( new FindAfterStrategy("L"));
+	$f1 = $ul->find( new FindAfterStrategy("Olaf"));
 	print_r($f1);
 	
 	$f2 = $ul->find(new RandomStrategy());
