@@ -1,4 +1,6 @@
+
 <!doctype html>
+<!-- Single page form submit implementation by fullarray -->
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
