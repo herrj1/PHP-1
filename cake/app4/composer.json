@@ -1,0 +1,8 @@
+{
+    "require": {
+        "friendsofcake/crud": "^5.3",
+        "friendsofcake/crud-view": "^0.10.0",
+        "friendsofcake/search": "^4.2",
+        "friendsofcake/bootstrap-ui": "^1.3"
+    }
+}
