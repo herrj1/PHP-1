@@ -1,0 +1,270 @@
+Laravel + reactjs
+
+step 1
+laravel new lara-react
+
+step 2
+php artisan preset react
+
+step 3
+npm install && npm run dev
+
+step 4
+go into resources->assets->js->components->Example.js and edit
+
+step 5
+resources->views->welcome.blade.php and add the following
+<html>
+<head>...</head>
+<body>
+<div id="example"></div>
+<script type="text/javascript" src="/js/app.js"></script>
+</body></html>
+
+step 6
+create new component under resources->assets->js->components->User.js
+
+step 7
+import React from 'react'
+import ReactDom from 'react-dom'
+export default class User extends React.component{
+	render(){
+		return {
+			<div>
+			 <h2>Users Listings</h2>
+			 <table className="table table-bordered">
+			   <thead>
+				<tr>
+				  <ht>ID</ht>
+				  <ht>Name</ht>
+				  <ht>Email</ht>
+				  <ht>Action</ht>
+				</tr>
+			   </thead>
+			   <tbody>
+				<tr>
+				 <td>1</td>
+				 <td>Adam</td>
+				 <td>adam@email.com</td>
+				 <td><a href="" className="btn btn-primary">Edit</a> || <a href="" className="btn btn-danger">Delete</a> </td>
+				</tr>
+			   </tbody>
+			 </table>
+			</div>
+		}
+	}
+}
+
+step 8
+go to resources->assets->js->app.js and add:
+require('./components/Users');
+
+step 9
+<div class="container">
+ <div class="row">
+   <div id="app" class="col-lg-12">
+     
+   </div>
+ </div>
+</div>
+
+step 10
+Add to User.js the following:
+constructor(){
+  super();
+  this.state = {
+    data: []
+  }
+}
+
+componentsWillMount(){
+  let $this = this;
+}
+
+step 11
+nom install axios --save
+
+step 12
+go to resources->assets->js->app.js and add:
+window.axios = require('axios');
+
+step 13
+Add to User.js the following:
+componentWillMount(){
+  let $this = this;
+  axios.get('/api/users').then(response => {
+    $this.setState({
+      data: response.data
+    })
+  }).catch(error => {
+     console.log(error)
+  });
+}
+
+step 14 (optional)
+npm run watch [if it is not running.]
+
+step 15
+add the following to User.js
+<tbody>
+ [this.state.data.map((user, i) => {
+    <tr>
+      <td>[user.id]</td>
+      <td>[user.name]</td>
+      <td>[user.email]</td>
+      <td><a href="" className="btn btn-primary">Edit</a> || 
+          <a href="" className="btn btn-danger">Delete</a> </td>
+    </tr>
+  })]
+ <tr>
+  <td>...</td>
+  ...
+ </tr>
+</tbody>
+
+step 16
+add to the bottom of file in User.js
+
+<tbody>
+ [this.state.data.map((user, i) => {
+  <UserRow key={i} i={i} user={user} object={this} />
+</tbody>
+
+class UserRow extends React.Component{
+  render()[
+    return {
+    <tr key={this.props.i}>
+      <td>[this.props.user.id]</td>
+      <td>[this.props.user.name]</td>
+      <td>[this.props.user.email]</td>
+      <td><a href="" className="btn btn-primary">Edit</a> || 
+          <a href="javascript:;" className="btn btn-danger" onClick={this.deleteUser.bind(this, this.props.user)}>Delete</a> </td>
+    </tr>
+    }
+  ]
+}
+
+if(document.getElementById('app')){
+  ReactDom.render{<User/>, document.getElementById('app')}
+}
+
+step 17
+Add the following.
+
+deleteUser(user, object){
+  console.log(user)
+ 
+  var $this = object
+  axios.delete('/api/users/'+user.id).then(response => {
+    console.log(response)
+   
+    const newState = $this.state.data.slice();
+    newState.splice(newState.indexOf(user), i)
+    $this.setState({
+     data: newState
+    })
+  }).catch(error => {
+    console.log(error)
+  })
+}
+
+
+step 18
+Edit and add the following line to User.js
+
+<a href="javascript:;" className="btn btn-danger" onClick={this.deleteUser.bind(this, this.props.user, this.props.object)}>Delete</a>
+
+step 19
+Edit and add the following line to User.js
+<a href={"/users"+this.props.user.id+"/edit"} className="btn btn-primary">Edit</a>
+
+step 20
+create a new file under resources->views->edit.blade.php
+@extends("layouts.app")
+@section("content")
+  <div id="edit" class="col-lg-12"></div>
+@endsection
+
+step 21
+Edit and add the following lines to Controller\UserController.php
+
+public function edit($id){
+  return view(view: "edit", compact(varname: 'id') );
+}
+
+step 22
+Edit and add the following line to edit.blade.php
+
+<div id="edit" class="col-lg-12" id="{!! $id !!}"></div>
+
+step 23
+create new file under assets\js\components\Edit.js
+
+swap names 'create' to 'edit'
+
+swap name 'Save' text to 'Update'
+
+step 24
+add route to app.js
+
+require('./components/Edit');
+
+step 25
+Edit the following lines to bottom of file Edit.js
+
+if(document.getElementById('edit')){
+  var id = $("#edit").data("id");
+  ReactDom.render(<Edit id={id}, document.getElementById('edit'))
+}
+
+step 26
+edit the following line under edit.blade.php
+
+<div id="edit" class="col-lg-12" data-id="{!! $id !!}"></div>
+
+
+step 27
+add lines under 
+
+constructor(){...}
+
+componentWillMount(){
+  let id = this.props.id
+  
+  axios.get('/api/users'+id).then(response => {
+    console.log(response.data)   
+  }).catch(error => {
+
+  })
+  //console.log(this.props.id)
+}
+
+step 28
+edit Api\UserController.php
+
+public function show($id){
+  $user = User::find($id);
+  return response()->json($user);
+}
+
+step 29
+edit lines under 
+
+constructor(){...}
+
+componentWillMount(){
+  let id = this.props.id
+  
+  axios.get('/api/users'+id).then(response => {
+    //console.log(response.data)
+
+     var user = response.data;
+     this.setState({
+       name: user.name,
+       email: user.email
+     })
+  }).catch(error => {
+
+  })
+  //console.log(this.props.id)
+}
