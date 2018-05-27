@@ -1,0 +1,9 @@
+composer create-project --prefer-dist laravel/laravel blog
+
+php artisan make:migration create_image_gallery_table
+
+php artisan make:model Gallery
+
+php artisan make:controller ImageGalleryController --resource
+
+php artisan serve
