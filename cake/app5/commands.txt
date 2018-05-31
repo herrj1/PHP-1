@@ -1,0 +1,33 @@
+Commands
+
+1 uncomment in config\app.php
+Plugin::load('Migrations');
+
+2 create config/Migrations folder if not created
+
+3 run
+Windows
+bin\cake bake migration CreateProducts name:string description:text created modified
+
+linux
+bin/cake bake migration CreateProducts name:string description:text created modified
+
+4 add, modify, or remove column
+bin/cake bake migration AddNameIndexToProducts name:string:index
+
+bin/cake bake migration AddFullDescriptionToProducts full_description:string[60]
+
+bin/cake bake migration RemovePriceFromProducts price
+
+4
+bin/cake migrations migrate
+bin/cake migrations rollback
+
+5
+bin/cake bake model Articles
+
+6
+bin/cake bake controller Articles
+
+7
+$routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
