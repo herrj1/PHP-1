@@ -1,0 +1,17 @@
+Import data and schema:
+mysql -u [uname] -p [pass] -h localhost lara26search < sakila-data.sql
+
+Export database:
+mysqldump -u [uname] -p[pass] db_name > db_backup.sql
+
+Create model:
+php artisan make:model Models/Film
+
+Add indexing:
+php artisan scout:import "App\Models\Film"
+
+[Then check folder and file: AppRoot\storage\filename.index ]
+
+
+Use tinker to test:
+php artisan tinker
