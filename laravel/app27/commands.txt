@@ -1,0 +1,56 @@
+composer create-project --prefer-dist laravel/laravel [appname]
+
+Add package:
+composer require laravel/scout
+
+Install driver:
+composer require teamtnt/laravel-scout-tntsearch-driver
+
+Add providers:
+'providers' => [
+    /*
+     * Package Service Providers...
+     */
+    Laravel\Scout\ScoutServiceProvider::class,
+    TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+]
+
+Publish command:
+php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"
+
+Add line to end of .env file:
+SCOUT_DRIVER=tntsearch
+
+Add to bottom of scout.php file:
+'tntsearch' => [
+    'storage'  => storage_path(),
+],
+
+
+Import data and schema:
+mysql -u [uname] -p [pass] -h localhost lara26search < sakila-data.sql
+
+Export database:
+mysqldump -u [uname] -p[pass] db_name > db_backup.sql
+
+Create model with specific models folder:
+php artisan make:model Models/Film
+
+Import records to scout for indexing:
+php artisan scout:import "App\Models\Film"
+
+[Then check folder and file: AppRoot\storage\filename.index ]
+
+
+Use tinker to test:
+php artisan tinker
+
+
+Adding controller to view:
+php artisan make:controller FilmSearchController
+
+Adding routes:
+Route::get('films.search','FilmSearchController@search');
+
+Add serve command:
+php artisan serve
