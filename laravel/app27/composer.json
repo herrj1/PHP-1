@@ -1,6 +1,6 @@
 {
     "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "description": "Search",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
@@ -11,6 +11,7 @@
         "laravel/tinker": "^1.0",
         "teamtnt/laravel-scout-tntsearch-driver": "^3.0"
     },
+    
     "require-dev": {
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
