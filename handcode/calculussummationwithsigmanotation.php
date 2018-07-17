@@ -1,6 +1,8 @@
 function sumfunction($start, $length){
  $sum = 0;
- for($i = $start; $i <= $length ; $i++){$sum += 1/(pow($i, 2)+9);}
+    for($i = $start; $i <= $length ; $i++){
+       $sum += 1/(pow($i, 2)+9);
+    }
  return $sum .' ';
 }
 
