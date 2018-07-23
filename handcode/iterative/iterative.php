@@ -9,7 +9,6 @@
 		for($i = 2; $i < $n; $i++){
 			$third = $first + $second;
 			echo $third .' ';
-			
 			$first = $second;
 			$second = $third;
 		}
