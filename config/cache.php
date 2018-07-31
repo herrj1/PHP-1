@@ -14,9 +14,7 @@ return [
     | Supported: "apc", "array", "database", "file", "memcached", "redis"
     |
     */
-
     'default' => env('CACHE_DRIVER', 'file'),
-
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
