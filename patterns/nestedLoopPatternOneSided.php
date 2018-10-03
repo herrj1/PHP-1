@@ -3,9 +3,9 @@
 		for($y = 1; $y <= $x; $y++){
 			echo "*";
 			  if($y < $x){
-				  echo " ";
+				  echo "  ";
 			  }
 		}
-		echo "\n";
+		echo "\n\n";
 	}
 ?>
