@@ -2,7 +2,6 @@
 	function printFibonacciIte($n){
 		$first = 0;
 		$second = 1;
-		
 		echo "Fibonacci series \n";
 		echo $first .' '. $second .' ';
 		
