@@ -3,7 +3,7 @@ function bubbleSort($array){
 		return $array;
 	}
 
-        //Loop through every element
+        //Loop through every element(s)
 	for($outer=0; $outer < $length; $outer++){
 		for($inner=0; $inner < $length; $inner++){
 			if($array[$outer] < $array[$inner]){
