@@ -8,7 +8,6 @@ function shellSort($array){
         $k++;
         $gap[$k] = (int)($gap[$k-1]/2);
     }
-
     for($i=0; $i <= $k; $i++){
         $step = $gap[$i];
         for($j = $step; $j < $length; $j++){
