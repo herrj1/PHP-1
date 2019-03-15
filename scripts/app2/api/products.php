@@ -1,4 +1,5 @@
 <?php
+//by fullarray
 //Connect to database
 $connection=mysqli_connect('localhost','root','','apiapp2');
 
