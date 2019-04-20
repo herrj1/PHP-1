@@ -8,8 +8,8 @@ session_start();
 </head>
 <body>
 	<div>
-		<p>Welcome, <?php echo $_SESSION['username']; ?></p>
-		<?php echo '<br/><a href="index.php?action=logout">Logout</a>'; ?>
+	   <p>Welcome, <?php echo $_SESSION['username']; ?></p>
+	   <?php echo '<br/><a href="index.php?action=logout">Logout</a>'; ?>
 	</div>
 </body>
 </html>
