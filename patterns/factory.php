@@ -8,13 +8,11 @@ class User implements IUser{
 		return "Marcus";
 	}
 }
-
 class UserFactory{
 	public static function Create($id){
 		return new User($id);
 	}
 }
-
 $uo = UserFactory::Create(1);
 echo($uo->getName()."\n");
 
