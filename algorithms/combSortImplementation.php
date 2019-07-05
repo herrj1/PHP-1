@@ -8,7 +8,6 @@ public static function combSort(array $array){
 		if($gap > 1){
 			$gap = floor($gap/1.2473);
 		}
-		
 		$swapped = false;
 		$j++;
 		
