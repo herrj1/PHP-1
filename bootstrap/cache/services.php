@@ -1,7 +1,6 @@
 <?php return array (
   'providers' => 
-  array (
-    0 => 'Illuminate\\Auth\\AuthServiceProvider',
+  array (    0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     2 => 'Illuminate\\Bus\\BusServiceProvider',
     3 => 'Illuminate\\Cache\\CacheServiceProvider',
