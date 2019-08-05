@@ -5,7 +5,6 @@
 		private $db;
 		private $connection;
 		
-		
 		function __construct(){
 			$this->db = new DB_Connection();
 			$this->connection = $this->db->getConnection();
