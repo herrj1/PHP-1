@@ -8,6 +8,5 @@ function checkSort($array){
                 return false;
             }
         }
-    }
-    return true;
+    }return true;
 }
