@@ -5,7 +5,6 @@ function quickSort($array){
 
     $k = $array[0];
     $x = $y = array();
-
     for($i = 1; $i < $length; $i++){
         if($array[$i] <= $k){
             $x[] = $array[$i];
