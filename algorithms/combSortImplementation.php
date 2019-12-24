@@ -3,7 +3,6 @@ public static function combSort(array $array){
 	$j = 0; 
 	$length = count($array);
 	$gap = $length;
-	
 	while($gap > 1 || $swapped){
 		if($gap > 1){
 			$gap = floor($gap/1.2473);
