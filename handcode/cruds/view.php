@@ -3,14 +3,9 @@
 <html>
 
 <head>
-
 <title>View Records</title>
-
 </head>
-
 <body>
-
-
 
 <?php
 
