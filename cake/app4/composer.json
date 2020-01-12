@@ -1,4 +1,5 @@
 {
+    
     "require": {
         "friendsofcake/crud":"^5.3",
         "friendsofcake/crud-view":"^0.10.0",
