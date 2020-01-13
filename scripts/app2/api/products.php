@@ -84,8 +84,6 @@ function insert_product()
 	echo json_encode($response);
 }
 
-
-
 function update_product($product_id)
 {
 	global $connection;
