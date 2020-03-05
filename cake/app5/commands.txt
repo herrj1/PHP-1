@@ -1,5 +1,5 @@
 #migration commands
-Commands
+Command
 
 1 uncomment in config\app.php
 Plugin::load('Migrations');
