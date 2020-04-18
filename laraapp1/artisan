@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
-/*|--------------------------------------------------------------------------
+/*|------------------------------------------------------------------
 | Register The Auto Loader
-|--------------------------------------------------------------------------
+|--------------------------------------------------------------------
 |
 | Composer provides a convenient, automatically generated class loader
 | for our application. We just need to utilize it! We'll require it
