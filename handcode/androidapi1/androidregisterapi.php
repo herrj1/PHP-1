@@ -4,12 +4,10 @@
 	class User{
 		private $db;
 		private $connection;
-		
 		function __construct(){
 			$this->db = new DB_Connection();
 			$this->connection = $this->db->getConnection();
 		}
-		
 		public function does_user_exist($email,$password)
 		{
 			$query = "Select * from users where email='$email' and password = '$password' ";
