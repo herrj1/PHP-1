@@ -5,7 +5,6 @@
 	
 	class CommandChain{
 		private $_commands = array();
-		
 		public function addCommand($cmd){
 			$this->_commands []= $cmd;
 		}
