@@ -12,5 +12,6 @@ public static function gnomeSort(array $array){
 			}
 		}
 	}
+		
 	return $array;
 }
