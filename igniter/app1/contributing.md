@@ -5,7 +5,7 @@ CodeIgniter is a community driven project and accepts contributions of code and 
 
 Issues are a quick way to point out a bug. If you find a bug or documentation error in CodeIgniter then please check a few things first:
 
-1. There is not already an open Issue
+1. There is not already an open Issues
 2. The issue has already been fixed (check the develop branch, or look for closed Issues)
 3. Is it something really obvious that you can fix yourself?
 
