@@ -5,7 +5,7 @@ function sumfunction($start, $length){
     }
  return $sum .' ';
 }
-//Sample run
+//Sample runs
 echo sumfunction(2,6);
 
 //Sample output
