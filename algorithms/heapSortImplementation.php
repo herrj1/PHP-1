@@ -32,10 +32,10 @@ class heapSort{
 			if($array[$swap]<$array[$left]){
 				$swap=$left;
 			}
+
 			if($left+1<=$end && $array[$swap]<$array[$left+1]){
 				$swap=$left+1;
-			}
-			
+			}			
 			if($swap!=$root){
 				$tmp=$array[$root];
 				$array[$root]=$array[$swap];
