@@ -24,13 +24,11 @@
             "tests/",
             "database/"
         ]
-    },
-    "scripts": {
+    }, "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
         ]
-    },
-    "minimum-stability": "dev",
+    },    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "optimize-autoloader": true
