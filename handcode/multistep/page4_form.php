@@ -3,11 +3,10 @@
  <head>
  <title>Fullarray Multi step example/title>
  <link rel="stylesheet" href="style.css" />
- </head>
- <body>
+ </head><body>
  <div class="container">
  <div class="main">
- <h2>Fullarray Multi step example</h2>
+ <h2>Fullarray Multi step examples</h2>
  <?php
  session_start();
  if (isset($_POST['state'])) {
